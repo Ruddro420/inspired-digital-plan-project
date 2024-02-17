@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "items": [
+      { "name": "Graphic Design", "value": "10" },
+      { "name": "Facebook Ads", "value": "2" },
+      { "name": "Website Creation", "value": "1" },
+      { "name": "Motion Video", "value": "3" }
+    ],
+    "total": "5000"
+  },
+  {
+    "id": "2",
+    "items": [
+      { "name": "Graphic Design", "value": "50" },
+      { "name": "Facebook Ads", "value": "30" },
+      { "name": "Website Creation", "value": "1" },
+      { "name": "Motion Video", "value": "39" },
+      { "name": "Video Create", "value": "13" }
+    ],
+    "total": "15000"
+  },
+  {
+    "id": "3",
+    "items": [
+      { "name": "Graphic Design", "value": "150" },
+      { "name": "Facebook Ads", "value": "40" },
+      { "name": "Website Creation", "value": "1" },
+      { "name": "Motion Video", "value": "39" },
+      { "name": "Video Create", "value": "13" },
+      { "name": "Motion Create", "value": "23" }
+    ],
+    "total": "75000"
+  }
+]

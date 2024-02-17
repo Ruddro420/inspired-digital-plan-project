@@ -4,6 +4,10 @@ import Home from './pages/Home'
 import Price from './pages/Price';
 import Login from './pages/Login';
 import Main from './pages/Main';
+import Basic from './plans/Basic';
+import BookOrder from './pages/BookOrder';
+import Enterprise from './plans/Enterprise';
+import Company from './plans/Company';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +25,23 @@ const router = createBrowserRouter([
       {
         path: "/home/price",
         element: <Price />,
-      }
+      },
+      {
+        path: "/home/basic",
+        element: <Basic />,
+      },
+      {
+        path: "/home/book",
+        element: <BookOrder />,
+      },
+      {
+        path: "/home/company",
+        element: <Company/>,
+      },
+      {
+        path: "/home/enterprise",
+        element: <Enterprise />,
+      },
     ]
   },
 ]);
