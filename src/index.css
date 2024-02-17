@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Primary Stages*/
+body{
+    font-family: "Hind Siliguri", sans-serif;
+}
+
+/* Login Page */
+.hero{
+    display: block!important;
+}
+/* Home Page */
+.card {
+    padding: 0px!important;
+    text-align: left!important;
+    cursor: pointer;
+}
+.card-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: var(--padding-card, 1.3rem)!important;
+    gap: 0.5rem;
+}
