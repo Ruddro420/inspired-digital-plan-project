@@ -37,39 +37,41 @@ const Enterprise = () => {
 
     return (
         <>
-            <div className="py-[10px] text-center">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">Choose a Enterprise Plan</h2>
-            </div>
-            <div className="flex justify-center mb-4">
-                <select value={selectedPlan} onChange={handlePlanChange} className="select select-secondary w-full max-w-xs m-3">
-                    {mainData.map(plan => (
-                        <option key={plan.id} value={plan.id}>Plan {plan.id}</option>
-                    ))}
-                </select>
-                <select value={selectedMonths} onChange={handleMonthChange} className="select select-secondary w-full max-w-xs m-3">
-                    {[1, 2, 3, 4, 5, 6].map(month => (
-                        <option key={month} value={month}>{month} Month(s)</option>
-                    ))}
-                </select>
-            </div>
-            <div className="grid grid-cols-4 gap-8 justify-items-center">
-                {data.map((item, index) => (
-                    <div key={index} className="card bg-base-100 shadow-xl border">
-                        <div className="card-body w-30">
-                            <h2 className="card-title">
-                                {item.name}
-                                <div className="badge badge-secondary">{item.value}</div>
-                            </h2>
+            <div className='price-container'>
+                <div className="py-[10px] text-center">
+                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">Choose a Enterprise Plan</h2>
+                </div>
+                <div className="flex justify-center mb-4">
+                    <select value={selectedPlan} onChange={handlePlanChange} className="select select-secondary w-full max-w-xs m-3">
+                        {mainData.map(plan => (
+                            <option key={plan.id} value={plan.id}>Plan {plan.id}</option>
+                        ))}
+                    </select>
+                    <select value={selectedMonths} onChange={handleMonthChange} className="select select-secondary w-full max-w-xs m-3">
+                        {[1, 2, 3, 4, 5, 6].map(month => (
+                            <option key={month} value={month}>{month} Month(s)</option>
+                        ))}
+                    </select>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
+                    {data.map((item, index) => (
+                        <div key={index} className="card bg-base-100 shadow-xl border">
+                            <div className="card-body w-30">
+                                <h2 className="card-title">
+                                    {item.name}
+                                    <div className="badge badge-secondary">{item.value}</div>
+                                </h2>
 
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-            {/* Total Costing */}
-            <div role="alert" className="alert alert-info shadow-lg mt-10 ">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <h2>  <button className="btn btn-sm btn-danger">Total Cost : ৳ {total} </button>  </h2>
-                <Link to='/home/book' className="btn btn-sm btn-danger">Book Order</Link>
+                    ))}
+                </div>
+                {/* Total Costing */}
+                <div role="alert" className="alert alert-info shadow-lg mt-10 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h2>  <button className="btn btn-sm btn-danger">Total Cost : ৳ {total} </button>  </h2>
+                    <Link to='/home/book' className="btn btn-sm btn-danger">Book Order</Link>
+                </div>
             </div>
         </>
     );

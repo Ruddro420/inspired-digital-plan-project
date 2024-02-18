@@ -39,87 +39,89 @@ const CustomPlan = () => {
 
     return (
         <>
-            <div className="py-[10px] text-center">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">Customize Your Plan</h2>
-            </div>
-            <div>
-                <div className="overflow-x-auto">
-                    <table className="table table-zebra">
-                        {/* head */}
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Quantity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {/* row 1 */}
-                            <tr>
-                                <th>1</th>
-                                <td>Graphic Design</td>
-                                <td>
-                                    {graphics.map(item => (
-                                        <button
-                                            key={item}
-                                            className={`btn btn-outline btn-secondary m-1 ${selectGraphics === item ? 'active-color' : ''}`}
-                                            onClick={() => handleButtonClick1(item)}
-                                        >
-                                            {item}
-                                        </button>
-                                    ))}
-                                </td>
-                            </tr>
-                            {/* row 2 */}
-                            <tr>
-                                <th>2</th>
-                                <td>Facebook Ads</td>
-                                <td>
-                                    {fbads.map(item => (
-                                        <button
-                                            key={item}
-                                            className={`btn btn-outline btn-secondary m-1 ${selectFacebook === item ? 'active-color' : ''}`}
-                                            onClick={() => handleButtonClick2(item)}
-                                        >
-                                            {item}
-                                        </button>
-                                    ))}
-                                </td>
-                            </tr>
-                            {/* row 3 */}
-                            <tr>
-                                <th>3</th>
-                                <td>Website</td>
-                                <td>
-                                    {website.map(item => (
-                                        <button
-                                            key={item}
-                                            className={`btn btn-outline btn-secondary m-1 ${selectWebsite === item ? 'active-color' : ''}`}
-                                            onClick={() => handleButtonClick3(item)}
-                                        >
-                                            {item}
-                                        </button>
-                                    ))}
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>#</th>
-                                <td>Total</td>
-                                <td>
-                                    <div role="alert" className="alert shadow-lg">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                        <div>
-                                            <button className='btn btn-info'>
-                                                ৳ {total} Taka
+            <div className='price-container'>
+                <div className="py-[10px] text-center">
+                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">Customize Your Plan</h2>
+                </div>
+                <div>
+                    <div className="overflow-x-auto">
+                        <table className="table table-zebra">
+                            {/* head */}
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {/* row 1 */}
+                                <tr>
+                                    <th></th>
+                                    <td>Graphic Design</td>
+                                    <td>
+                                        {graphics.map(item => (
+                                            <button
+                                                key={item}
+                                                className={`btn btn-outline btn-secondary m-1 ${selectGraphics === item ? 'active-color' : ''}`}
+                                                onClick={() => handleButtonClick1(item)}
+                                            >
+                                                {item}
                                             </button>
+                                        ))}
+                                    </td>
+                                </tr>
+                                {/* row 2 */}
+                                <tr>
+                                    <th></th>
+                                    <td>Facebook Ads</td>
+                                    <td>
+                                        {fbads.map(item => (
+                                            <button
+                                                key={item}
+                                                className={`btn btn-outline btn-secondary m-1 ${selectFacebook === item ? 'active-color' : ''}`}
+                                                onClick={() => handleButtonClick2(item)}
+                                            >
+                                                {item}
+                                            </button>
+                                        ))}
+                                    </td>
+                                </tr>
+                                {/* row 3 */}
+                                <tr>
+                                    <th></th>
+                                    <td>Website</td>
+                                    <td>
+                                        {website.map(item => (
+                                            <button
+                                                key={item}
+                                                className={`btn btn-outline btn-secondary m-1 ${selectWebsite === item ? 'active-color' : ''}`}
+                                                onClick={() => handleButtonClick3(item)}
+                                            >
+                                                {item}
+                                            </button>
+                                        ))}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td>Total</td>
+                                    <td>
+                                        <div role="alert" className="alert shadow-lg">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            <div>
+                                                <button className='btn btn-info'>
+                                                    ৳ {total} Taka
+                                                </button>
+                                            </div>
+                                            <Link to='/home/book' className="btn btn-sm btn-primary">Book Order</Link>
                                         </div>
-                                        <Link to='/home/book' className="btn btn-sm btn-primary">Book Order</Link>
-                                    </div>
 
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </>
