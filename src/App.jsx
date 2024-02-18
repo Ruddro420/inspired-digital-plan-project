@@ -8,6 +8,8 @@ import Basic from './plans/Basic';
 import BookOrder from './pages/BookOrder';
 import Enterprise from './plans/Enterprise';
 import Company from './plans/Company';
+import CustomPlan from './pages/CustomPlan';
+import Sgraphics from './ServicePlan/Sgraphics';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
       {
         path: "/home/enterprise",
         element: <Enterprise />,
+      },
+      {
+        path: "/home/customplan",
+        element: <CustomPlan />,
+      },
+      {
+        path: "/home/:title",
+        element: <Sgraphics />,
       },
     ]
   },

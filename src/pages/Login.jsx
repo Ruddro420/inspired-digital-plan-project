@@ -6,8 +6,9 @@ const Login = () => {
     const [pass, setPass] = useState('')
     const navigate = useNavigate()
     // handler function 
-    const loginHandler = () => {
-        if (email == 'admin@gmail.com' && pass == 'admin') {
+    const loginHandler = (e) => {
+        e.preventDefault();
+        if (email == 'admin@admin.com' && pass == 'admin') {
             navigate('/home')
         } else {
             alert('Invalid Email or Password')
@@ -30,6 +31,11 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input onChange={(e) => setPass(e.target.value)} type="password" placeholder="password" className="input input-bordered" required />
+                            </div>
+                            <br />
+                            <div>
+                                Email: admin@admin.com <br />
+                                Pass: admin
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>

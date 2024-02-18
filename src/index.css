@@ -11,6 +11,9 @@ body{
 .hero{
     display: block!important;
 }
+.hero-content {
+    margin-top: 60px;
+}
 /* Home Page */
 .card {
     padding: 0px!important;
@@ -23,4 +26,15 @@ body{
     flex-direction: column;
     padding: var(--padding-card, 1.3rem)!important;
     gap: 0.5rem;
+}
+/* Active button Color */
+.active-color{
+    background: #FF00D3!important;
+    color: white!important;
+}
+/* Order Now // Book Now */
+.teQAzf {
+    margin: auto;
+    max-width: 90vw;
+    width: 100%!important;
 }
