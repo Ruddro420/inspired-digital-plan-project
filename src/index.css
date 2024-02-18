@@ -33,3 +33,18 @@ body{
     color: white!important;
 }
 /* Order Now // Book Now */
+
+
+/* Mobile Responsive */
+@media(max-width:900px){
+    .card {
+        padding: 0px !important;
+        text-align: left !important;
+        cursor: pointer;
+        width: 90%;
+        margin: auto;
+      }
+      .home-container{
+        margin-bottom: 90px;
+      }
+}

@@ -16,7 +16,7 @@ const Home = () => {
     }
     return (
         <>
-            <div className="">
+            <div className="home-container">
                 <div className=" mb-8 py-[10px] text-center">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">আমাদের সার্ভিস সমূহ</h2>
                 </div>
