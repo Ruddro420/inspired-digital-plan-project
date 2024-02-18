@@ -1,13 +1,7 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const BootomNav = () => {
   const location = useLocation();
-  const navigate = useNavigate();
-
-  const handleLogOut = () => {
-    localStorage.removeItem("email");
-    navigate("/");
-  };
 
   return (
     <>
