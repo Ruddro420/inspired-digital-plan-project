@@ -2,7 +2,7 @@
 const BookOrder = () => {
     return (
         <>
-            <div className="price-container mb-10">
+            <div className="price-container mb-20">
                 <div className=" mb-8 py-[10px] text-center">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">অর্ডার বুক করুন</h2>
                 </div>
