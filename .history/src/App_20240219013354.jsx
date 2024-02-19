@@ -1,33 +1,24 @@
-import {
-  RouterProvider,
-  ScrollRestoration,
-  createBrowserRouter,
-} from "react-router-dom";
-import "./App.css";
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
-import Sgraphics from "./ServicePlan/Sgraphics";
-import BookOrder from "./pages/BookOrder";
-import CustomPlan from "./pages/CustomPlan";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Main from "./pages/Main";
-import Price from "./pages/Price";
-import Basic from "./plans/Basic";
-import Company from "./plans/Company";
-import Enterprise from "./plans/Enterprise";
+import { RouterProvider, ScrollRestoration, createBrowserRouter } from 'react-router-dom';
+import './App.css'
+import Home from './pages/Home'
+import Price from './pages/Price';
+import Login from './pages/Login';
+import Main from './pages/Main';
+import Basic from './plans/Basic';
+import BookOrder from './pages/BookOrder';
+import Enterprise from './plans/Enterprise';
+import Company from './plans/Company';
+import CustomPlan from './pages/CustomPlan';
+import Sgraphics from './ServicePlan/Sgraphics';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Login />
   },
   {
     path: "/home",
-    element: (
-      <PrivateRoute>
-        <Main />
-      </PrivateRoute>
-    ),
+    element: <Main />,
     children: [
       {
         path: "/home",
@@ -47,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/home/company",
-        element: <Company />,
+        element: <Company/>,
       },
       {
         path: "/home/enterprise",
@@ -61,19 +52,20 @@ const router = createBrowserRouter([
         path: "/home/:title",
         element: <Sgraphics />,
       },
-    ],
+    ]
   },
 ]);
 
 function App() {
+
   return (
     <>
-      <RouterProvider router={router}>
+      <RouterProvider router={router} >
         <Home />
         <ScrollRestoration />
       </RouterProvider>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
