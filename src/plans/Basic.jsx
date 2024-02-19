@@ -7,11 +7,11 @@ const Basic = () => {
     const [selectedMonths, setSelectedMonths] = useState(1);
     const [data, setData] = useState([]);
     const [total, setTotal] = useState(0);
+    const [discount, setDiscount] = useState();
 
     useEffect(() => {
         const selectedData = mainData.find(item => item.id === selectedPlan);
         if (selectedData) {
-            console.log(total);
             const adjustedData = selectedData.items.map(item => ({
                 ...item,
                 value: parseInt(item.value) * selectedMonths
@@ -19,20 +19,25 @@ const Basic = () => {
             // total data count
             const getTotal = selectedData.total;
             const totalData = parseInt(getTotal) * selectedMonths;
-
+            // set data
             setData(adjustedData);
             setTotal(totalData);
-
         }
-    }, [selectedPlan, selectedMonths, total]);
+    }, [selectedPlan, selectedMonths]);
 
-    console.log(total);
     const handlePlanChange = (e) => {
         setSelectedPlan(e.target.value);
     };
 
     const handleMonthChange = (e) => {
         setSelectedMonths(parseInt(e.target.value));
+    };
+
+    // discount calculation
+    const discountHandler = () => {
+        const discountedTotal = total - (discount / 100) * total;
+        setTotal(discountedTotal < 0 ? 0 : discountedTotal);
+        setDiscount(' ')
     };
 
     return (
@@ -69,11 +74,27 @@ const Basic = () => {
                 {/* Total Costing */}
                 <div role="alert" className="alert alert-info shadow-lg mt-10 ">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <h2>  <button className="btn btn-sm btn-danger">Total Cost : ৳ {total} </button>  </h2>
+                    <h2>
+                        <button className="btn btn-sm btn-danger">Total Cost : ৳ {total} </button>
+                    </h2>
                     <Link to='/home/book' className="btn btn-sm btn-danger">Book Order</Link>
                 </div>
+                {/* Discount Costing */}
+                <div role="alert" className="alert alert-info shadow-lg mt-10 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h2>
+                        <input
+                            onChange={(e) => setDiscount(e.target.value)}
+                            value={discount}
+                            type="number"
+                            placeholder="Discount Here"
+                            className="input input-sm input-bordered input-primary ml-5 max-w-xs"
+                        />
+                        <button onClick={discountHandler} className="btn btn-sm btn-danger ml-5">Apply Discount </button>
+                    </h2>
+                </div>
             </div>
-
+            <br /><br /> <br /><br />
         </>
     );
 };
