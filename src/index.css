@@ -13,7 +13,8 @@ body {
 }
 
 .hero-content {
-    margin-top: 60px;
+    margin: auto;
+    margin-top: 60px!important;
 }
 
 /* Home Page */
