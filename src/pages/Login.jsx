@@ -11,17 +11,19 @@ const Login = () => {
     e.preventDefault();
     if (email == "admin@admin.com" && pass == "admin") {
       localStorage.setItem("email", email);
-      navigate("/home");
+      navigate("/home/price");
     } else {
       alert("Invalid Email or Password");
     }
   };
   return (
     <>
-      <div className="hero bg-base-100">
+      <div className="hero bg-base-100 login-cotainer">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={loginHandler} className="card-body">
+              <h1 className="text-center text-2xl">Login Here</h1>
+              <div className="border-bottom"></div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -52,7 +54,7 @@ const Login = () => {
                 Pass: admin
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-primary login-button">Login</button>
               </div>
             </form>
           </div>
